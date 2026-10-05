@@ -1,0 +1,9 @@
+foxhound-helper - drive one native app window without taking the user's mouse or keyboard
+
+Usage:
+  foxhound-helper --process APP.exe [--bind 127.0.0.1] [--port 8770] [--token TOKEN]
+  foxhound-helper --pid PID ...
+  foxhound-helper --title TEXT ...
+  foxhound-helper --hwnd N ...
+
+The helper binds to localhost by default. A non-localhost bind requires --token.
