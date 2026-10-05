@@ -1,5 +1,5 @@
-//! On-demand, full-resolution snapshot of one app's windows composited as the user would see them —
-//! main window, dialogs, menus and tooltips — even while they are covered by other windows.
+//! On-demand, full-resolution snapshot of one app's windows composited as the user would see them:
+//! main window, dialogs, menus and tooltips, even while they are covered by other windows.
 //!
 //! Each layer is rendered with `PrintWindow(PW_RENDERFULLCONTENT)` (DWM content, so D3D/flip-model
 //! surfaces like D3D previews come through) and copied, bottom to top, into a *stage*: a fixed
@@ -49,7 +49,7 @@ impl ScreenRect {
 }
 
 /// One window to draw: its handle and the part of it that is actually visible on screen (the DWM
-/// extended frame bounds — `GetWindowRect` also counts the invisible resize border).
+/// extended frame bounds because `GetWindowRect` also counts the invisible resize border).
 #[derive(Debug, Clone, Copy)]
 pub struct Layer {
     pub hwnd: isize,
@@ -64,7 +64,7 @@ pub struct Snapshot {
 }
 
 impl Snapshot {
-    /// Encode as an opaque RGB PNG (fast compression — this is on the agent's critical path).
+    /// Encode as an opaque RGB PNG with fast compression because this is on the agent's critical path.
     pub fn to_png(&self) -> Result<Vec<u8>, String> {
         use image::codecs::png::{CompressionType, FilterType, PngEncoder};
         use image::ImageEncoder;

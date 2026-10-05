@@ -21,8 +21,8 @@ not a UI, agent runtime, mission system, recorder, or clip tool.
 The current backend is Windows/Win32. The crate boundaries are intentionally
 platform-neutral: Linux and macOS build with explicit stubs that point to the
 backend surfaces to implement. The primitive remains the same on every
-platform—discover a target, capture it without foreground focus, and inject
-input without taking the user's keyboard—while the native window APIs differ.
+platform: discover a target, capture it without foreground focus, and inject
+input without taking the user's keyboard while the native window APIs differ.
 
 ![Foxhound writing into Notepad without taking keyboard focus](public/foxhound-notepad-demo.gif)
 
@@ -34,9 +34,9 @@ dependency on either product.
 
 Workspace crates:
 
-- `foxhound-capture` — composited snapshots of covered native windows
-- `foxhound-input` — posted pointer, key-chord, and Unicode text injection
-- `foxhound-helper` — HTTP adapter for clients such as TASR
+- `foxhound-capture`: composited snapshots of covered native windows
+- `foxhound-input`: posted pointer, key-chord, and Unicode text injection
+- `foxhound-helper`: HTTP adapter for clients such as TASR
 
 ```powershell
 cargo test --workspace

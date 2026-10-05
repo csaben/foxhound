@@ -1,4 +1,4 @@
-//! foxhound-helper — a small `agent_helper.py`-compatible HTTP API, served on the host and aimed at
+//! foxhound-helper is a small `agent_helper.py`-compatible HTTP API, served on the host and aimed at
 //! one application's windows instead of a VM's whole desktop.
 //!
 //! Screenshots come from `foxhound-capture` (PrintWindow of the app's windows, composited, so they
@@ -8,7 +8,7 @@
 //!
 //! Every coordinate is relative to the target's main window: `/health`'s `screen` is that window's
 //! size, and `(0, 0)` is its top-left visible pixel. A harness written for the VM helper therefore
-//! works unchanged — the "screen" is just the app.
+//! works unchanged because the "screen" is just the app.
 //!
 //! ```text
 //! foxhound-helper [--process app.exe | --title TEXT | --hwnd N] [--bind 127.0.0.1] [--port 8770]

@@ -1,5 +1,5 @@
 //! Which windows the helper drives: one application, identified by process name, a title
-//! substring, or an explicit HWND, and seen as a *group* — its main window plus every other visible
+//! substring, or an explicit HWND, and seen as a *group*: its main window plus every other visible
 //! top-level window it owns (dialogs, Qt menus and combo popups, tooltips, native file pickers).
 //!
 //! The main window's visible frame is the **stage**: screenshots are exactly the stage, and every
@@ -330,7 +330,7 @@ pub fn resolve(spec: &TargetSpec, sticky: Option<isize>) -> Result<Group, String
 }
 
 /// A minimized window renders nothing, so the helper un-minimizes the main window without
-/// activating it and sends it to the back of the z-order — it keeps rendering behind whatever the
+/// activating it and sends it to the back of the z-order. It keeps rendering behind whatever the
 /// human is doing. Returns true if it had to.
 pub fn ensure_rendering(main: isize) -> bool {
     unsafe {

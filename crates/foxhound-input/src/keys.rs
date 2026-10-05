@@ -241,7 +241,7 @@ pub fn assume_focus(target: isize) {
 
 /// Post a plain key press (down + up) with no modifiers. Posted (not sent) on purpose: the target's
 /// own message loop runs `TranslateMessage` on it, which produces the `WM_CHAR` that text fields
-/// need — Enter in a line edit, Space on a focused button.
+/// need, such as Enter in a line edit or Space on a focused button.
 pub fn tap_key(target: isize, vk: u32) {
     unsafe {
         let h = hwnd(target);
@@ -260,7 +260,7 @@ pub fn tap_key(target: isize, vk: u32) {
     }
 }
 
-/// One UTF-16 unit as `WM_KEYDOWN(VK_PACKET)`, `WM_CHAR(unit)`, `WM_KEYUP(VK_PACKET)` — the shape
+/// One UTF-16 unit as `WM_KEYDOWN(VK_PACKET)`, `WM_CHAR(unit)`, `WM_KEYUP(VK_PACKET)`, the shape
 /// SendInput's `KEYEVENTF_UNICODE` produces. Qt needs it: it only joins an emoji's surrogate pair
 /// when each half is the WM_CHAR following a key-down, and drops bare halves. Win32 controls ignore
 /// the `VK_PACKET` key messages and take the WM_CHAR.
