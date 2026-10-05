@@ -1,0 +1,17 @@
+# Foxhound
+
+> A Windows-native Rust substrate for capturing and driving an application without taking the
+> user's physical mouse, keyboard focus, foreground window, or visual z-order.
+
+Foxhound provides primitives and a localhost helper. It is not an agent, workflow runner, recorder,
+or adapter registry. Hound is the intended higher-level agent interface.
+
+## Documentation
+
+- [Project overview](README.md): Architecture, crate boundaries, build commands, and behavior.
+- [Agent contribution guide](AGENTS.md): Invariants and verification requirements.
+- [Helper source](crates/foxhound-helper/src): HTTP bridge and target lifecycle.
+
+## Source
+
+- [Public repository](https://github.com/csaben/foxhound): Canonical source and releases.

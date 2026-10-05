@@ -1,0 +1,17 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/foxhound-window",
+    "crates/foxhound-capture",
+    "crates/foxhound-input",
+    "crates/foxhound-helper",
+]
+
+[workspace.package]
+edition = "2021"
+rust-version = "1.85"
+license = "Apache-2.0"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
